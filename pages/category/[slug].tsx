@@ -25,7 +25,7 @@ const CategoryPage: React.FC<{ posts: any; categories: categoryType[] }> = ({
           content={`All posts related to ${category!.name}`}
         />
       </Head>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {posts.posts.map((post: any, index: number) => (
           <PostCard post={post} key={index} />
         ))}

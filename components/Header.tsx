@@ -51,7 +51,7 @@ const Header = () => {
       <div className="flex justify-between items-center py-4 border-b border-sage">
         <Link href={"/"}>
           <span className="cursor-pointer text-xl font-semibold uppercase tracking-widest">
-            Black Blog
+            Back Blog
           </span>
         </Link>
         <ul className="hidden md:flex gap-4 ">

@@ -8,8 +8,29 @@ const Home: NextPage<{ posts: any }> = ({ posts }) => {
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
-        <title>Black Blog</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Back Blog</title>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta
+          name="description"
+          content="Back Blog is a blog where a developers can share their thoughts on internet"
+        />
       </Head>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
