@@ -10,6 +10,7 @@ type formDataType = {
 
 const CommentsForm: React.FC<{ slug: string }> = ({ slug }) => {
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [localStorage, setLocalStorage] = useState<any>(null);
   const [formData, setFormData] = useState<formDataType>({
@@ -72,6 +73,7 @@ const CommentsForm: React.FC<{ slug: string }> = ({ slug }) => {
 
   //submit form handler--------------------------------------
   const submitFormHandler = () => {
+    setLoading(true);
     setError(false);
 
     const { name, email, comment, storeData } = formData;
@@ -108,8 +110,18 @@ const CommentsForm: React.FC<{ slug: string }> = ({ slug }) => {
     submitComment(commentObj)
       .then((res) => {
         setSuccess(true);
+        setFormData({
+          name: "",
+          email: "",
+          comment: "",
+          storeData: false,
+        });
+        setLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   };
 
   return (
@@ -173,8 +185,13 @@ const CommentsForm: React.FC<{ slug: string }> = ({ slug }) => {
       )}
       <div>
         <button
+          disabled={loading}
           type="button"
-          className="bg-blue-600 text-white py-3 px-8 rounded-lg transition duration-300 hover:bg-opacity-90 hover:shadow-lg active:scale-95"
+          className={` text-white py-3 px-8 rounded-lg transition duration-300  ${
+            loading
+              ? "cursor-not-allowed bg-gray-500"
+              : "cursor-pointer bg-blue-600 hover:bg-opacity-90 hover:shadow-lg active:scale-95"
+          }`}
           onClick={submitFormHandler}
         >
           Submit Comment
