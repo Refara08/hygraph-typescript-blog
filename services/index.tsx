@@ -94,6 +94,40 @@ export const getPosts = async () => {
 };
 
 //====================================================================
+export const getPostsByCategory = async (slug: string) => {
+  const query = gql`
+    query GetPostByCategory($slug: String!) {
+      categoriesConnection(where: { slug: $slug }) {
+        edges {
+          node {
+            posts {
+              id
+              title
+              excerpt
+              createdAt
+              slug
+              featuredImage {
+                url
+              }
+              author {
+                name
+                photo {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query, { slug });
+
+  return result.categoriesConnection.edges;
+};
+
+//====================================================================
 export type postDetailType = {
   id: string;
   title: string;

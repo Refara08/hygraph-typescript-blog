@@ -6,12 +6,12 @@ import { CommentsPerPostType, getCommentsPerPost } from "../services";
 
 const Comments: React.FC<{ slug: string }> = ({ slug }) => {
   const [comments, setComments] = useState<CommentsPerPostType[]>([]);
-  console.log(slug);
+  // console.log(slug);
 
   useEffect(() => {
     getCommentsPerPost(slug).then((res) => {
       setComments(res);
-      console.log(res);
+      // console.log(res);
     });
   }, [slug]);
 

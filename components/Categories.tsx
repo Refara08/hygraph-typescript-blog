@@ -16,7 +16,7 @@ const Categories = () => {
       </h1>
       <div className="flex flex-col gap-3">
         {categories.map((category, index) => (
-          <Link href={`category/${category.slug}`} key={index}>
+          <Link href={`/category/${category.slug}`} key={index}>
             {category.name}
           </Link>
         ))}
