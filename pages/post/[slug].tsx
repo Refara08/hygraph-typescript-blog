@@ -22,7 +22,7 @@ const PostDetailsPage: React.FC<{ post: postDetailType }> = ({ post }) => {
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
-        <title>{`CMS Graphql Blog | ${post.title}`}</title>
+        <title>{`Back Blog | ${post.title}`}</title>
         <meta name="description" content={post.excerpt} />
       </Head>
 
