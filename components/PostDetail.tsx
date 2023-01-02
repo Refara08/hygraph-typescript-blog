@@ -68,7 +68,11 @@ const PostDetail: React.FC<{ post: postDetailType }> = ({ post }) => {
 
   return (
     <div className="bg-white rounded-xl mb-12 pb-8 overflow-hidden">
-      <img src={post.featuredImage.url} alt={post.title} />
+      <img
+        src={post.featuredImage.url}
+        alt={post.title}
+        className="w-full object-cover"
+      />
       <div className="py-4 px-6">
         <div className="flex flex-row justify-between md:justify-start items-center w-full mb-2 gap-4">
           <div className="flex items-center gap-2">

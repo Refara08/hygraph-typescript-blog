@@ -13,7 +13,7 @@ const Home: NextPage<{ posts: any }> = ({ posts }) => {
       </Head>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-8 col-span-1">
+        <div className="lg:col-span-8 col-span-1 grid grid-cols-1 lg:grid-cols-2 gap-4">
           {posts.map((post: any, index: number) => (
             <PostCard post={post.node} key={index} />
           ))}
