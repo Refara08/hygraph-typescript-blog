@@ -8,7 +8,7 @@ const Home: NextPage<{ posts: any }> = ({ posts }) => {
   return (
     <div className="container mx-auto px-10 mb-8">
       <Head>
-        <title>CMS Graphql Blog</title>
+        <title>Black Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
